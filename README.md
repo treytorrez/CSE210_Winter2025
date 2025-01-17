@@ -1,5 +1,5 @@
-# cse210-student-template
-This is the starter code for students in CSE 210.
+# CSE210_Winter2025
+This is Trey Torrez's repository for Winter 2025
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
