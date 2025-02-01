@@ -2,7 +2,7 @@ public class Resume
 {
     public string _name;
 
-    public List<Job> _jobs = new List<Job>();
+    
 
     //unused func; added for the sake of the exercise
     public List<Job> addJob(Job job)

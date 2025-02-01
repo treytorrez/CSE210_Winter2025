@@ -138,7 +138,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-prove-Develop02",
-            "program": "${workspaceFolder}/prove/Develop02/bin/Debug/net8.0/Develop02.dll",
+            "program": "${workspaceFolder}/prove/Develop02/bin/Debug/net8.0-windows/Develop02.dll",
             "args": [],
             "cwd": "${workspaceFolder}/prove/Develop02",
             "console": "integratedTerminal",
