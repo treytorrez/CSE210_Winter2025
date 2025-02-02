@@ -1,9 +1,16 @@
 using System.Diagnostics;
-using static Helpers.Helpers;
+using JourMinal;
+using static JourMinal.Helpers;
 using static System.Console;
+using System.ComponentModel.DataAnnotations;
 
 class Program
 {
+    /// <summary>
+    /// Primary entry point: performs opening checks, journal selection, and displays the main menu.
+    /// </summary>
+    private const int MIN_CONSOLE_WIDTH = 115;
+
     static void Main(string[] args)
     {
 
@@ -13,35 +20,33 @@ class Program
         //Clear console for a clean start
         Clear();
         SlowType("Welcome to...");
-        //delay for dramatic effect
-        SimpleDelay(2);
-        //make sure the console is big enough to display the title and journal
+        SimpleDelay(2); // Delay for dramatic effect
+        
+        // Store initial dimensions and check for a wide enough console window.
         int initialWidth = WindowWidth;
         int initialHeight = WindowHeight;
-
-        //async operation to check if the console is big enough
+        
         CancellationTokenSource cts = new CancellationTokenSource();
         TerminalSizeMonitor.Watch(initialWidth, initialHeight, cts);
         try
         {
-            if (initialWidth < 115)
+            if (initialWidth < MIN_CONSOLE_WIDTH)
             {
-                OpeningScript(cts.Token);
+                OpeningScript(cts.Token); // Animates a plea for a larger window.
                 WriteLine();
-                if (WindowWidth < 115)
+                if (WindowWidth < MIN_CONSOLE_WIDTH)
                 {
                     SlowType("That's better.");
                     SimpleDelay(1);
                 }
             }
-
         }
-
         catch (OperationCanceledException)
         {
+            // Ignore cancellation exceptions.
         }
-
-
+        
+        // Animate title display using a multi-line string.
         SlowlyLowerString("""
         88                                                                      88                           88
         88                                                                      ""                           88
@@ -63,23 +68,25 @@ class Program
 
         //Check for .journal files in directory
         Journal currJournal;
-        string[] detectedJournals = Journal.getJournalsInDir();
+        string[] detectedJournals = Journal.GetJournalsInDir();
         switch (detectedJournals.Length)
         {
-            case 0: //no journals detected
-
+            case 0: // No journals detected; prompt user to create a new one.
                 WriteLine("No Journals Detected");
                 WriteLine("Would you like to create a new journal? [Y/N]");
                 if (ReadLine().ToLower() == "y")
                 {
-                    //create journal with user entered name and location 
-                    //if no file location is entered, create journal in current directory
                     WriteLine("Enter Journal Name");
                     string journalName = ReadLine();
                     WriteLine("Enter Journal File Location or leave blank to create in current directory");
-                    string journalFileLocation = ReadLine();
-                    if (journalFileLocation == "") { journalFileLocation = Directory.GetCurrentDirectory(); Debug.WriteLine(journalFileLocation); }
-                    currJournal = new Journal(journalName, journalFileLocation);
+                    string journalFileDirectory = ReadLine();
+                    if (journalFileDirectory == "")
+                    {
+                        journalFileDirectory = Directory.GetCurrentDirectory();
+                        WriteLine($"Directory Selected: {journalFileDirectory}");
+                        SimpleDelay(2);
+                    }
+                    currJournal = Journal.CreateNewJournal(journalName, journalFileDirectory);
                     break;
                 }
                 else
@@ -88,14 +95,16 @@ class Program
                     WriteLine("Goodbye");
                     return;
                 }
-                
-            case 1: //TODO: automatically select journal if only one is detected
-                WriteLine($"Detected Journal: {Path.GetFileName(detectedJournals[0])}");
-                currJournal = new Journal(Path.GetFileName(detectedJournals[0]), detectedJournals[0]);
-                SimpleDelay(2); 
+
+            case 1: // One journal detected; select automatically.
+                string detectedJournalFullPath = detectedJournals[0];
+                string detectedJournalName = Path.GetFileName(detectedJournalFullPath);
+                WriteLine($"Detected Journal: {detectedJournalName}");
+                currJournal = new Journal(detectedJournalName, detectedJournalFullPath);
+                SimpleDelay(2);
                 break;
 
-            default: //select journal from list of detected journals
+            default: // Multiple journals; prompt user to choose.
                 WriteLine("Detected Journals:");
                 int i = 0;
                 foreach (string journal in detectedJournals)
@@ -125,24 +134,42 @@ class Program
                 Clear();
                 Entry currEntry = new Entry();
                 currEntry.WriteEntry();
+                currJournal.SaveEntry(currEntry);
                 break;
             case "2":
                 Clear();
                 WriteLine("Load Entry");
+                currJournal.LoadEntries();
+                WriteLine("Detected Entries:");
+                int index = 0;
+                foreach (Entry entry in currJournal._allEntries)
+                {
+                    WriteLine($"{index}) {entry._name} {entry._date}");
+                    index++;
+                }
+                WriteLine("Enter the number of the entry you would like to load");
+                int entryIndex = Int32.Parse(ReadLine());
+                try
+                {
+                    currJournal._allEntries[entryIndex].Display();
+                }
+                catch { }
                 break;
             case "3":
                 Clear();
-                WriteLine("enter test text");
-                
+                WriteLine("enter test text");//TODO: Do I need any options?
+
                 break;
             case "4":
                 Clear();
-                WriteLine("Quit");
+                SlowType("Goodbye, see you next time!");
                 break;
             default:
                 Clear();
                 WriteLine("Invalid Input");
                 break;
         }
+        WriteLine("Press any key to exit");
+        ReadLine();
     }
 }
