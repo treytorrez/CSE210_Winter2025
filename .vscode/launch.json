@@ -141,7 +141,7 @@
             "program": "${workspaceFolder}/prove/Develop02/bin/Debug/net8.0-windows/Develop02.dll",
             "args": [],
             "cwd": "${workspaceFolder}/prove/Develop02",
-            "console": "integratedTerminal",
+            "console": "externalTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
