@@ -19,6 +19,15 @@ class Program
         //=========================================================================================================
         //Clear console for a clean start
         Clear();
+
+        bool skipIntro = false;
+        if (args.Length > 0 && args[0] == "-s") {skipIntro = true; }
+        else
+        {
+            System.Console.WriteLine("Skip Intro? [Y/N]");
+            if (ReadLine().ToLower() == "y") {skipIntro = true;}
+        }
+if (!skipIntro) {
         SlowType("Welcome to...");
         SimpleDelay(2); // Delay for dramatic effect
         
@@ -60,6 +69,7 @@ class Program
 """);
         WriteLine("press enter to continue");
         ReadLine();
+        }
         Clear();
 
         //=========================================================================================================
