@@ -12,6 +12,7 @@ public void SetColor(string color){
     this.color = color ;
 }
 
+public string GetN
 public abstract double GetArea();
 
 }
