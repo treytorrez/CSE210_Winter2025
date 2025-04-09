@@ -5,6 +5,7 @@ using groupDict = System.Collections.Generic.Dictionary<string, System.Tuple<str
 using System.Data;
 using Homeworktriage.Parsers;
 using System.Diagnostics.CodeAnalysis;
+using Microsoft.VisualBasic;
 
 namespace Homeworktriage
 {
@@ -12,7 +13,9 @@ namespace Homeworktriage
     {
         private static async Task Main(string[] args)
         {
-            Console.WriteLine("Welcome to HomeworkTriage!");
+            Console.WriteLine("Enter your name: "); //TODO: Add GPA input and use the name and GPA somewhere
+            Student student = new Student(Console.ReadLine() ?? "Student", 4.0f);
+            Console.WriteLine($"Welcome to HomeworkTriage {student.name}!");
 
             string? canvasApiToken = Environment.GetEnvironmentVariable("CANVAS_API_TOKEN");
             if (string.IsNullOrEmpty(canvasApiToken))
@@ -22,8 +25,6 @@ namespace Homeworktriage
             }
             Debug.WriteLine($"API key found");
 
-            Console.WriteLine("Enter your name: "); //TODO: Add GPA input and use the name and GPA somewhere
-            Student student = new Student(Console.ReadLine() ?? "Student", 4.0f); 
 
             try
             {
@@ -55,7 +56,9 @@ namespace Homeworktriage
                 Console.WriteLine("2. Display Assignment Groups for Each Class");
                 Console.WriteLine("3. Display Assignments in Each Class");
                 Console.WriteLine("4. Display Point Totals for Each Category");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("5. Assignment Percent of Final Grade");
+                Console.WriteLine("6. Ranked Assignments");
+                Console.WriteLine("7. Exit");
                 Console.Write("Enter your choice: ");
 
                 string? choice = Console.ReadLine();
@@ -73,10 +76,12 @@ namespace Homeworktriage
                         Console.WriteLine("\nAssignment Groups:");
                         foreach (var course in student.Courses)
                         {
-                            Console.WriteLine($"Course: {course.Name}");
+                            string courseTitle = $"Course: {course.Name}";
+                            Console.Write(courseTitle);
+                            Console.Write(new string('-', Console.WindowWidth - courseTitle.Length));
                             foreach (var group in course.AssignmentGroups)
                             {
-                                Console.WriteLine($"  Group: {group.Value.Item1}, Weight: {group.Value.Item2}%");
+                                Console.WriteLine($"  Group: {group.Value.Item1,-35} Weight: {group.Value.Item2}%");
                             }
                         }
                         break;
@@ -85,10 +90,14 @@ namespace Homeworktriage
                         Console.WriteLine("\nAssignments:");
                         foreach (var course in student.Courses)
                         {
-                            Console.WriteLine($"Course: {course.Name}");
+                            string courseTitle = $"Course: {course.Name}";
+                            Console.Write(courseTitle);
+                            Console.Write(new string('-', Console.WindowWidth - courseTitle.Length));
+                            Console.WriteLine($"    Name{new String('-', 31)} | Points | Due Date{new String('-', 12)}");
+
                             foreach (var assignment in course.Assignments)
                             {
-                                Console.WriteLine($"  {assignment}");
+                                Console.WriteLine($"    {assignment}");
                             }
                         }
                         break;
@@ -97,7 +106,10 @@ namespace Homeworktriage
                         Console.WriteLine("\nPoint Totals for Each Category:");
                         foreach (Course course in student.Courses)
                         {
-                            Console.WriteLine($"Course: {course.Name}");
+
+                            string courseTitle = $"Course: {course.Name}";
+                            Console.Write(courseTitle);
+                            Console.Write(new string('-', Console.WindowWidth - courseTitle.Length));
                             var categoryPointTotals = course.Assignments
                                 .GroupBy(assignment => assignment.groupId)
                                 .ToDictionary(
@@ -116,13 +128,13 @@ namespace Homeworktriage
                                 }
                                 if (categoryPointTotals.TryGetValue(categoryId, out float totalPoints))
                                 {
-                                    Console.WriteLine($"  Group: {group.Value.Item1}, Total Points: {totalPoints}");
+                                    Console.WriteLine($"        Group: {group.Value.Item1}, Total Points: {totalPoints}");
                                 }
                             }
                         }
                         break;
 
-                    case "5":
+                    case "7":
                         Console.WriteLine("Exiting program. Goodbye!");
                         return;
 
@@ -140,18 +152,21 @@ namespace Homeworktriage
                         for (int i = 0; i < Math.Min(10, student.Assignments.Count); i++)
                         {
                             Assignment assignment = rankedAssignments.TryDequeue(out assignment, out float priority) ? assignment : null;
-                            Console.WriteLine($"Rank {i + 1}: {assignment.name} {assignment.PercentFinalGrade * 100}%  || priority {priority}");
+                            Console.WriteLine($"Rank {i + 1 + ":",-4} {assignment.name,-60} {Math.Round((decimal)assignment.PercentFinalGrade, 4) * 100,-6}%  | priority {-priority}");
                         }
                         break;
 
-                    case "7":
+                    case "5":
                         Console.WriteLine("\nAssignment Percent of Final Grade:");
                         foreach (var course in student.Courses)
                         {
-                            Console.WriteLine($"Course: {course.Name}");
+                            string courseTitle = $"Course: {course.Name}";
+                            Console.Write(courseTitle);
+                            Console.Write(new string('-', Console.WindowWidth - courseTitle.Length));
+                            Console.WriteLine($"    Name{new String('-', 31)} | Percentage of Final Grade{new String('-', 10)}");
                             foreach (var assignment in course.Assignments)
                             {
-                                Console.WriteLine($"  {assignment.name}: {assignment.PercentFinalGrade * 100}%");
+                                Console.WriteLine($"    {(assignment.name.Length > 35 ? assignment.name[..32] + "..." : assignment.name.PadRight(35))} | {Math.Round((decimal)assignment.PercentFinalGrade,3) * 100}%");
                             }
                         }
                         break;

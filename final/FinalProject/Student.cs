@@ -2,7 +2,7 @@
 
 public class Student
 {
-    private string name;
+    public string name {get; private set;}
     private float gpa;
 
     private List<Course> courses = new List<Course>();

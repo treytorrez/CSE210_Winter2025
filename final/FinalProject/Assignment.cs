@@ -51,6 +51,7 @@ public class Assignment
 
     public override string ToString()
     {
-        return $"{(name.Length > 35 ? name[..35] + "..." : name.PadRight(35))} | {pointValue,-6} pts | Due(UTC): {DueDate,-21} ";  //TODO: fix UTC
+        return $"{(name.Length > 35 ? name[..32] + "..." : name.PadRight(35))} | {pointValue,-8} | {DueDate,-21}";  //TODO: fix UTC
     }
+
 }
