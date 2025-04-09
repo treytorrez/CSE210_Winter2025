@@ -1,45 +1,47 @@
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
+using System.Text.Json;
 
+namespace Homeworktriage;
 
 public class Course
 {
-    public string Name { get; }
-    public double Grade { get; }
-    public string Id { get; }
-    public List<Assignment> AssignmentList;
+    public string Name { get; private set; } // Use properties
+    public double Grade { get; private set; }
+    public string Id { get; private set; }
+    public List<Assignment> Assignments { get; private set; }
+    public Dictionary<string, Tuple<string, float>> AssignmentGroups { get; private set; } //{ID of group, (nameOfGroup, weightOfGroupz)}
+    public double? PercentFinalGrade { get; private set; } // Percentage of the final grade that this course contributes to.
 
     public Course(string name, double grade, string id)
     {
-        this.Name = name;
-        this.Grade = grade;
-        this.Id = id;
-        AssignmentList = new List<Assignment>(); // Initialize the list
-        _asyncAllAssignments().ConfigureAwait(false).GetAwaiter().GetResult(); // Block until assignments are fetched (less ideal for UI apps)
+        Name = name;
+        Grade = grade;
+        Id = id;
     }
 
     public override string ToString() => $"Course: {Name,-35} Grade: {Grade,-8} ID: {Id,-6}";
 
-    private async Task _asyncAllAssignments()
+    public void AddAssignment(Assignment assignment)
     {
-        this.AssignmentList = await Parser.FetchAssignments(Id);
-        Debug.WriteLine(this.AssignmentList.Count + " assignments found for ID :" + this.Id);
-        foreach(Assignment assn in this.AssignmentList)
-        {
-            Debug.WriteLine(assn);
-        }
-
+        if (Assignments == null)
+            Assignments = new List<Assignment>();
+        Assignments.Add(assignment);
     }
 
-    
-
-
-    public System.Func<float, System.TimeSpan> latePolicy
+    public void RemoveAssignment(Assignment assignment)
     {
-        get => default;
-        set
-        {
-        }
+        Assignments?.Remove(assignment);
+    }
+
+    public void AddAssignmentGroup(string groupId, Tuple<string, float> group)
+    {
+        if (AssignmentGroups == null)
+            AssignmentGroups = new Dictionary<string, Tuple<string, float>>();
+        AssignmentGroups[groupId] = group;
+    }
+
+    public void RemoveAssignmentGroup(string groupId)
+    {
+        AssignmentGroups?.Remove(groupId);
     }
 }
