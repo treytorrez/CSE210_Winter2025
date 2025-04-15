@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, img.Wirisformula, a[data-testid="headerMediumLogo"]>svg, .d2l-navigation-link-image-container, .d2l-iframe-loading-container {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}
+[data-darkreader-inline-bg] {
+  background: var(--darkreader-inline-bg) !important;
+}
+[data-darkreader-inline-border-short] {
+  border: var(--darkreader-inline-border-short) !important;
+}
+[data-darkreader-inline-border-bottom-short] {
+  border-bottom: var(--darkreader-inline-border-bottom-short) !important;
+}
+[data-darkreader-inline-border-left-short] {
+  border-left: var(--darkreader-inline-border-left-short) !important;
+}
+[data-darkreader-inline-border-right-short] {
+  border-right: var(--darkreader-inline-border-right-short) !important;
+}
+[data-darkreader-inline-border-top-short] {
+  border-top: var(--darkreader-inline-border-top-short) !important;
+}
+[data-darkreader-inline-invert] {
+    filter: invert(100%) hue-rotate(180deg);
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: var(--darkreader-background-ffffff, #181a1b);
+   --darkreader-neutral-text: var(--darkreader-text-000000, #e8e6e3);
+   --darkreader-selection-background: var(--darkreader-background-0060d4, #004daa);
+   --darkreader-selection-text: var(--darkreader-text-ffffff, #e8e6e3);
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">@layer {
+html {
+    background-color: var(--darkreader-background-ffffff, #181a1b) !important;
+}
+html {
+    color-scheme: dark !important;
+}
+iframe {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: var(--darkreader-background-ffffff, #181a1b);
+}
+html, body {
+    border-color: var(--darkreader-border-4c4c4c, #736b5e);
+    color: var(--darkreader-text-000000, #e8e6e3);
+}
+a {
+    color: var(--darkreader-text-0040ff, #3391ff);
+}
+table {
+    border-color: var(--darkreader-border-808080, #545b5e);
+}
+mark {
+    color: var(--darkreader-text-000000, #e8e6e3);
+}
+::placeholder {
+    color: var(--darkreader-text-a9a9a9, #b2aba1);
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: var(--darkreader-background-faffbd, #404400) !important;
+    color: var(--darkreader-text-000000, #e8e6e3) !important;
+}
+* {
+    scrollbar-color: var(--darkreader-background-b0b0b0, #454a4d) var(--darkreader-background-f1f1f1, #202324);
+}
+::selection {
+    background-color: var(--darkreader-background-0060d4, #004daa) !important;
+    color: var(--darkreader-text-ffffff, #e8e6e3) !important;
+}
+::-moz-selection {
+    background-color: var(--darkreader-background-0060d4, #004daa) !important;
+    color: var(--darkreader-text-ffffff, #e8e6e3) !important;
+}
+}</style>
+  <meta charset="utf-8">
+  <title>CanvasApiTutorial.md - Grip</title>
+  <link rel="icon" href="http://localhost:6419/__/grip/static/favicon.ico">
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/code-0210be90f4d3.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/dark-8a995f0bacd4.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/dark_colorblind-cd826e8636dc.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/dark_dimmed-f37fb7684b1f.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/dark_high_contrast-9ac301c3ebe5.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/dark_tritanopia-18119e682df0.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/github-f98cfa35d7b2.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/global-f916fa79dd3f.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/light-74231a1f3bbb.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/light_colorblind-f91b0f603451.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/light_high_contrast-83beb16e0ecf.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/light_tritanopia-6e122dab64fc.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/notifications-subscriptions-menu.1bcff9205c241e99cff2.module.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/primer-cba26849680f.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/primer-primitives-225433424a87.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/primer-react.199362fc3b2e6c9bf7fb.module.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/repos-overview.0ee7cac3ab511a65d9f9.module.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/repository-4fce88777fa8.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="stylesheet" href="CanvasApiTutorial.md%20-%20Grip_files/octicons.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <style>
+    /* Page tweaks */
+    .preview-page {
+      margin-top: 64px;
+      margin-bottom: 21px;
+    }
+    /* User-content tweaks */
+    .timeline-comment-wrapper > .timeline-comment:after,
+    .timeline-comment-wrapper > .timeline-comment:before {
+      content: none;
+    }
+    /* User-content overrides */
+    .discussion-timeline.wide {
+      width: 920px;
+    }
+  </style><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="ea7b8557afe0407ea234e414300a86d9"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: var(--darkreader-background-ffd76e, #684b00) !important;
+    border-color: var(--darkreader-background-c59d00, #9e7e00) !important;
+    color: var(--darkreader-text-302505, #d7d4cf) !important;
+}
+#vimvixen-console-frame {
+    color-scheme: light !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: var(--darkreader-background-add8e6, #1b4958) !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: var(--darkreader-background-cfecf5, #0f3a47) !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: var(--darkreader-background-f5f5f5, #1e2021) !important;
+}
+.tou-uknfeu {
+    background-color: var(--darkreader-background-faedda, #432c09) !important;
+}
+.tou-6i3zyv {
+    background-color: var(--darkreader-background-85c3d8, #245d70) !important;
+}
+div.mermaid-viewer-control-panel .btn {
+    background-color: var(--darkreader-neutral-background);
+    fill: var(--darkreader-neutral-text);
+}
+svg g rect.er {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.entityBox {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.attributeBoxOdd {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.attributeBoxEven {
+    fill: var(--darkreader-selection-background);
+    fill-opacity: 0.8 !important;
+}
+svg rect.er.relationshipLabelBox {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g g.nodes rect,
+svg g g.nodes polygon {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.task {
+    fill: var(--darkreader-selection-background) !important;
+}
+svg line.messageLine0,
+svg line.messageLine1 {
+    stroke: var(--darkreader-neutral-text) !important;
+}
+div.mermaid .actor {
+    fill: var(--darkreader-neutral-background) !important;
+}
+mitid-authenticators-code-app > .code-app-container {
+    background-color: white !important;
+    padding-top: 1rem;
+}
+iframe#unpaywall[src$="unpaywall.html"] {
+    color-scheme: light !important;
+}
+select option {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+body#tumblr {
+    --darkreader-bg--secondary-accent: 31, 32, 34 !important;
+    --darkreader-bg--white: 23, 23, 23 !important;
+    --darkreader-text--black: 228, 224, 218 !important;
+}
+:host {
+    --d2l-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-button-icon-background-color-hover: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-color-ferrite: var(--darkreader-neutral-text) !important;
+    --d2l-color-sylvite: var(--darkreader-bg--d2l-color-sylvite) !important;
+    --d2l-dropdown-background-color: var(--darkreader-neutral-background) !important;
+    --d2l-dropdown-border-color: var(--darkreader-border--d2l-color-mica) !important;
+    --d2l-input-backgroud-color: var(--darkreader-neutral-background) !important;
+    --d2l-menu-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-tooltip-background-color: var(--darkreader-neutral-background) !important;
+    --d2l-tooltip-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+:host([_floating]) .d2l-floating-buttons-container {
+    background-color: var(--darkreader-neutral-background) !important;
+    border-top-color: var(--darkreader-border--d2l-color-mica) !important;
+    opacity: 0.88 !important;
+}
+d2l-card {
+    background: var(--darkreader-neutral-background) !important;
+    border-color: var(--darkreader-border--d2l-color-gypsum) !important;
+}
+d2l-dropdown-content > div,
+d2l-menu-item {
+    background-color: var(--darkreader-neutral-background) !important;
+    border-radius: 10px !important;
+}
+d2l-empty-state-simple {
+    border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-button-filter > ul > li > a.vui-button {
+    border-color: var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-label-text:has(.d2l-button-subtle-content):hover,
+.d2l-label-text:has(.d2l-button-subtle-content):focus,
+.d2l-label-text:has(.d2l-button-subtle-content):active {
+    background-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-navigation-centerer {
+    color: inherit !important;
+}
+.d2l-tabs-layout {
+    border-color: var(--darkreader-border--d2l-color-gypsum) !important;
+}
+.d2l-input,
+.d2l-calendar-date,
+.d2l-htmleditor-container {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.d2l-collapsible-panel {
+    border: 1px solid var(--darkreader-border--d2l-color-mica) !important;
+    border-radius: 0.4rem !important;
+}
+.d2l-collapsible-panel-divider {
+    border-bottom: 1px solid var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-w2d-flex {
+    border-bottom: 2px solid var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-collapsible-panel scrolled,
+.d2l-collapsible-panel-header,
+.d2l-w2d-collection-fixed {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.d2l-loading-spinner-bg {
+    fill: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-loading-spinner-bg-stroke {
+    stroke: var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-loading-spinner-wrapper svg path,
+.d2l-loading-spinner-wrapper svg circle {
+    fill: var(--darkreader-neutral-background) !important;
+}
+embed[type="application/pdf"] { filter: invert(100%) contrast(90%); }</style><style type="text/css">@media print {
+        .TridactylStatusIndicator {
+            display: none !important;
+        }
+    }</style></head>
+<body>
+  <div class="page">
+    <div id="preview-page" class="preview-page" data-autorefresh-url="/__/grip/refresh/">
+    <main id="js-repo-pjax-container">
+      <div class="clearfix new-discussion-timeline container-xl px-3 px-md-4 px-lg-5">
+        <div class="repository-content">
+          <div class="clearfix">
+            <div class="Layout Layout--flowRow-until-md Layout--sidebarPosition-end Layout--sidebarPosition-flowRow-end">
+              <div class="Layout-main">
+
+                
+
+                  <div id="readme" class="Box md Box--responsive">
+                    
+                      <div class="Box-header d-flex border-bottom-0 flex-items-center flex-justify-between color-bg-default rounded-top-2">
+                        <div class="d-flex flex-items-center">
+                          <h2 class="Box-title">
+                            CanvasApiTutorial.md
+                          </h2>
+                        </div>
+                      </div>
+                    
+                    <div class="Box-body px-5 pb-5">
+                      <article id="grip-content" class="markdown-body entry-content container-lg">
+                        <div class="markdown-heading"><h1 class="heading-element">Getting and Setting your API Token from Canvas</h1><a id="user-content-getting-and-setting-your-api-token-from-canvas" class="anchor" aria-label="Permalink: Getting and Setting your API Token from Canvas" href="#getting-and-setting-your-api-token-from-canvas"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><em><strong>A guide to setting up your API token with HomeworkTriage</strong></em></p>
+<hr>
+<div class="markdown-heading"><h3 class="heading-element">1. Go to Canvas</h3><a id="user-content-1-go-to-canvas" class="anchor" aria-label="Permalink: 1. Go to Canvas" href="#1-go-to-canvas"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Navigate to your institution's Canvas page. It should look something like this
+<code>MyInstitution.instructure.com</code></p>
+<div class="markdown-heading"><h3 class="heading-element">2. Find the settings</h3><a id="user-content-2-find-the-settings" class="anchor" aria-label="Permalink: 2. Find the settings" href="#2-find-the-settings"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>On the left side of your screen, select the button labeled "Account", then select "Settings"</p>
+<div class="markdown-heading"><h3 class="heading-element">3. Find the Token Generator</h3><a id="user-content-3-find-the-token-generator" class="anchor" aria-label="Permalink: 3. Find the Token Generator" href="#3-find-the-token-generator"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Scroll down until you find the section named Approved Integrations. 
+This is where you can view all the devices that have access to your 
+account.</p>
+<div class="markdown-heading"><h3 class="heading-element">4. Create Token</h3><a id="user-content-4-create-token" class="anchor" aria-label="Permalink: 4. Create Token" href="#4-create-token"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Below the list of integrations, there should be a button labeled "+ New Access Token", click this.</p>
+<p><a target="_blank" rel="noopener noreferrer" href="http://localhost:6419/integrationSectionpicture.png"><img src="CanvasApiTutorial.md%20-%20Grip_files/integrationSectionpicture.png" alt="integration Section Picture" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h3 class="heading-element">5. Set Token Settings</h3><a id="user-content-5-set-token-settings" class="anchor" aria-label="Permalink: 5. Set Token Settings" href="#5-set-token-settings"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>This should make a window pop up that has three fields, <strong>"Purpose"</strong>, <strong>"Expiration date"</strong>, and <strong>"Expiration time"</strong>. <strong>Purpose</strong> is a short description of the purpose of the token—this is to help you remember. <strong>Expiration date and time</strong>
+ are ways to limit the damage that could be done should your token get 
+leaked. If there is a time where you will stop using this token, 
+consider setting this limit. If not, you can leave this blank. However, <em>if
+ your API token is released on the open internet, anyone with the token 
+will have unlimited access to your Canvas account until you disable that
+ token.</em></p>
+<p><a target="_blank" rel="noopener noreferrer" href="http://localhost:6419/newTokenPic.png"><img src="CanvasApiTutorial.md%20-%20Grip_files/newTokenPic.png" alt="Token Settings Picture" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h3 class="heading-element">6. Copying the Token</h3><a id="user-content-6-copying-the-token" class="anchor" aria-label="Permalink: 6. Copying the Token" href="#6-copying-the-token"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>After filling out these fields and selecting "Generate Token," a new window should appear with your new API token.
+It'll look something like this (Don't worry, I set this key to expire minutes after I created it):</p>
+<p><code>10706~rZKyQG9yWMNL4LTm2CxxCzBHDXhmy2x4TPQfenZtM2VHwYqCcP7UM26WXVHHmRhhT</code></p>
+<p>Copy this and make sure you copied it correctly. It's important that 
+you make sure you have it because once you make it, it will not be 
+accessible again.</p>
+<p><a target="_blank" rel="noopener noreferrer" href="http://localhost:6419/copyTokenPic.png"><img src="CanvasApiTutorial.md%20-%20Grip_files/copyTokenPic.png" alt="Copy Token Picture" style="max-width: 100%;"></a></p>
+<div class="markdown-heading"><h1 class="heading-element">7. A Word of Warning</h1><a id="user-content-7-a-word-of-warning" class="anchor" aria-label="Permalink: 7. A Word of Warning" href="#7-a-word-of-warning"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>As with all API tokens, the key generated here allows full control 
+over your account, so it is extremely important that you do not put it 
+anywhere that would be uploaded publicly. This includes online version 
+control systems like GitHub and GitLab. Do <strong>not</strong> include 
+an unencrypted or plaintext version of this key in ANY of these systems 
+as the chance of your Canvas account being accessed against your will is
+ much, much higher.</p>
+<div class="markdown-heading"><h3 class="heading-element">8. Storing Your API Token in Environment Variables</h3><a id="user-content-8-storing-your-api-token-in-environment-variables" class="anchor" aria-label="Permalink: 8. Storing Your API Token in Environment Variables" href="#8-storing-your-api-token-in-environment-variables"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>To store the key securely, we will set it in your system's 
+environment variables. This allows your code to access it without 
+leaving sensitive information in your files.</p>
+<div class="markdown-heading"><h4 class="heading-element">Windows</h4><a id="user-content-windows" class="anchor" aria-label="Permalink: Windows" href="#windows"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Press <code>Windows + S</code> and search for <strong>Environment Variables</strong>.</li>
+<li>Click on <strong>"Edit the system environment variables"</strong> and then on the <strong>"Environment Variables"</strong> button.
+<a target="_blank" rel="noopener noreferrer" href="http://localhost:6419/newVarPic.png"><img src="CanvasApiTutorial.md%20-%20Grip_files/newVarPic.png" alt="New Variable Picture" style="max-width: 100%;"></a>
+</li>
+<li>Under <strong>User variables</strong>, click <strong>New...</strong>
+<a target="_blank" rel="noopener noreferrer" href="http://localhost:6419/newLocalVar.png"><img src="CanvasApiTutorial.md%20-%20Grip_files/newLocalVar.png" alt="" style="max-width: 100%;"></a>
+</li>
+<li>Set the <strong>Variable name</strong> to&nbsp;&nbsp;<code>CANVAS_API_TOKEN</code>
+<a target="_blank" rel="noopener noreferrer" href="http://localhost:6419/enterNewLocalVar.png"><img src="CanvasApiTutorial.md%20-%20Grip_files/enterNewLocalVar.png" alt="Create New Varable" style="max-width: 100%;"></a>
+</li>
+<li>Paste your token into the <strong>Variable value</strong> field</li>
+<li>Click OK through all dialogs</li>
+</ol>
+<p>To verify it works:</p>
+<div class="highlight highlight-source-powershell"><pre><span class="pl-smi">$<span class="pl-c1">env:</span>CANVAS_API_TOKEN</span></pre></div>
+<div class="markdown-heading"><h4 class="heading-element">macOS (bash or zsh)</h4><a id="user-content-macos-bash-or-zsh" class="anchor" aria-label="Permalink: macOS (bash or zsh)" href="#macos-bash-or-zsh"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>Open your terminal. <em>This can be done by pressing Command + Space and typing "Terminal" into the text bow that appears.</em>
+</li>
+<li>Find which shell you are using. This should be visible in the title bar of the application. Look for "bash" or "zsh"</li>
+<li>Open your shell config file by typing the following:
+<ul>
+<li>For bash: <code>nano ~/.bash_profile</code>
+</li>
+<li>For zsh: <code>nano ~/.zshrc</code>
+</li>
+</ul>
+</li>
+<li>Add the following line:</li>
+</ol>
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">export</span> CANVAS_API_TOKEN=<span class="pl-s"><span class="pl-pds">"</span>your_token_here<span class="pl-pds">"</span></span></pre></div>
+<ol start="4">
+<li>Save and close the file. In the&nbsp;<code>nano</code>editor, you can do this by pressing <code>Control + X</code>, then pressing <code>Y</code> to confirm saving, and finally <code>Enter</code> to confirm the filename.</li>
+</ol>
+<p><em>If you're using a different terminal editor (like <code>vim</code>), the steps may differ slightly, but the key idea is to write the change and exit the file.</em></p>
+<p>5. After saving and exiting, reload your shell config by typing:</p>
+<ul>
+<li><code>source ~/.bash_profile</code></li>
+<li><code>source ~/.zshrc</code></li>
+</ul>
+<ol start="6">
+<li>Test it by typing:</li>
+</ol>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">echo</span> <span class="pl-smi">$CANVAS_API_TOKEN</span></pre></div>
+<div class="markdown-heading"><h4 class="heading-element">Linux (bash)</h4><a id="user-content-linux-bash" class="anchor" aria-label="Permalink: Linux (bash)" href="#linux-bash"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Same process as macOS:</p>
+<ol>
+<li>Edit your shell profile file (usually <code>~/.bashrc</code>):</li>
+</ol>
+<div class="highlight highlight-source-shell"><pre>nano <span class="pl-k">~</span>/.bashrc</pre></div>
+<ol start="2">
+<li>Add:</li>
+</ol>
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">export</span> CANVAS_API_TOKEN=<span class="pl-s"><span class="pl-pds">"</span>your_token_here<span class="pl-pds">"</span></span></pre></div>
+<ol start="3">
+<li>Save and reload:</li>
+</ol>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">source</span> <span class="pl-k">~</span>/.bashrc</pre></div>
+<hr>
+<p>Once your token is set, the HomeworkTriage application will be able 
+to access your Canvas account and see all the assignments and classes 
+you are taking!</p>
+
+                      </article>
+                    </div>
+                  </div>
+
+                
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  </div><script>
+    function showCanonicalImages() {
+      var images = document.getElementsByTagName('img');
+      if (!images) {
+        return;
+      }
+      for (var index = 0; index < images.length; index++) {
+        var image = images[index];
+        if (image.getAttribute('data-canonical-src') && image.src !== image.getAttribute('data-canonical-src')) {
+          image.src = image.getAttribute('data-canonical-src');
+        }
+      }
+    }
+
+    function scrollToHash() {
+      if (location.hash && !document.querySelector(':target')) {
+        var element = document.getElementById('user-content-' + location.hash.slice(1));
+        if (element) {
+           element.scrollIntoView();
+        }
+      }
+    }
+
+    function autorefreshContent(eventSourceUrl) {
+      var initialTitle = document.title;
+      var contentElement = document.getElementById('grip-content');
+      var source = new EventSource(eventSourceUrl);
+      var isRendering = false;
+
+      source.onmessage = function(ev) {
+        var msg = JSON.parse(ev.data);
+        if (msg.updating) {
+          isRendering = true;
+          document.title = '(Rendering) ' + document.title;
+        } else {
+          isRendering = false;
+          document.title = initialTitle;
+          contentElement.innerHTML = msg.content;
+          showCanonicalImages();
+        }
+      }
+
+      source.onerror = function(e) {
+        if (e.readyState === EventSource.CLOSED && isRendering) {
+          isRendering = false;
+          document.title = initialTitle;
+        }
+      }
+    }
+
+    window.onhashchange = function() {
+      scrollToHash();
+    }
+
+    window.onload = function() {
+      scrollToHash();
+    }
+
+    showCanonicalImages();
+
+    var autorefreshUrl = document.getElementById('preview-page').getAttribute('data-autorefresh-url');
+    if (autorefreshUrl) {
+      autorefreshContent(autorefreshUrl);
+    }
+  </script><span class="cleanslate TridactylStatusIndicator TridactylModenormal">normal</span>
+
+<protonpass-root-86d1 data-protonpass-role="root" data-protonpass-theme="dark"></protonpass-root-86d1></body><iframe class="cleanslate hidden" src="CanvasApiTutorial.md%20-%20Grip_files/commandline.htm" id="cmdline_iframe" loading="lazy" style="height: 0px !important;"></iframe></html>
