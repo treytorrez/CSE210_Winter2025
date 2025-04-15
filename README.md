@@ -10,4 +10,4 @@ This repository contains the starter code for many different projects. They are 
 * `final` - Starter projects for final project.
 
 
-[API Access Information](final\FinalProject\GettingCanvasApiToken\CanvasApiTutorial.md - Grip.htm)
+API Access Information is in `.\final\FinalProject\GettingCanvasApiToken\CanvasApiTutorialhtm`
