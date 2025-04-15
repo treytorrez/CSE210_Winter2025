@@ -2,6 +2,7 @@
 
 using System.Diagnostics;
 using System.Net.Http.Headers;
+using System.Runtime.InteropServices;
 
 namespace Homeworktriage.Parsers;
 
@@ -14,11 +15,30 @@ public abstract class Parser
 
     static Parser()
     {
-        if (!string.IsNullOrEmpty(Token))
+        if (string.IsNullOrEmpty(Token))
         {
-            Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Token);
-            Debug.WriteLine("[DEBUG] Authorization header set for HTTP client.");
+            Console.WriteLine("Error: API token not found in environment variables.");
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                Console.WriteLine("On macOS? Make sure you've added:");
+                Console.WriteLine("    export CANVAS_API_TOKEN=\"your_token_here\"");
+                Console.WriteLine("to your ~/.zshrc or ~/.bash_profile file and restarted the terminal.");
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                Console.WriteLine("On Windows? Set the environment variable via System Properties > Environment Variables.");
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                Console.WriteLine("On Linux? Add:");
+                Console.WriteLine("    export CANVAS_API_TOKEN=\"your_token_here\"");
+                Console.WriteLine("to your ~/.bashrc or ~/.zshrc.");
+            }
+
+            Environment.Exit(1);
         }
+
         Client.BaseAddress = new Uri(BaseUrl);
         Debug.WriteLine("[DEBUG] HTTP client initialized with base URL.");
     }
